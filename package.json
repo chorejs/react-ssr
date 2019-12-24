@@ -1,0 +1,26 @@
+{
+  "name": "react-ssr",
+  "version": "1.0.0",
+  "description": "React server rendering application implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chorejs/react-ssr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chorejs/react-ssr/issues"
+  },
+  "homepage": "https://github.com/chorejs/react-ssr#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "webpack": "^4.41.4"
+  }
+}
