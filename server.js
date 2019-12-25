@@ -1,11 +1,17 @@
-const app = require('express')();
+const express = require('express');
+const app = express();
 const React = require('react');
 const ReactDom = require('react-dom');
 const { renderToString } = require('react-dom/server');
-const Home = require('./client/components/Home');
+const { StaticRouter } = require('react-router-dom');
+const App = require('./client/App');
 
-app.get('/', (req, res) => {
-  const content = renderToString(React.createElement(Home));
+app.get('*', (req, res) => {
+  const content = renderToString(
+    (
+      <StaticRouter><App/></StaticRouter>
+    )
+  );
   res.send(`
     <html>
       <head>
@@ -13,13 +19,13 @@ app.get('/', (req, res) => {
       </head>
       <body>
         <div id="root">${content}</div>
-        <script>
-          ${script}
-        </script>
+        <script src="./client.js"></script>
       </body>
     </html>
   `)
 });
+
+app.use(express.static('./dist'));
 
 app.listen(3000, () => {
   console.log('react-ssr listening on port 3000!');

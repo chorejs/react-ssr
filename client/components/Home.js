@@ -1,7 +1,13 @@
-const React = require('react');
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Home = () => {
-  return React.createElement('h1', null, 'This is a example.');
+const Home = function () {
+  return (
+    <div>
+      <h1>This is a home.</h1>
+      <Link to="/login">go to login</Link>
+    </div>
+  )
 };
 
-module.exports = Home
+export default Home;
